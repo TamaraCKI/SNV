@@ -85,7 +85,7 @@ var drag = d3.drag()
     var debt = clamp(0, c.y.domain()[1], c.y.invert(pos[1]))
 
     yourData.forEach(function(d){
-      if (Math.abs(d.year - year) < 0.5){//if you make this 8, it is way more fluent, but it doesn't start at the point it should start.
+      if (Math.abs(d.year - year) < 1.0){//if you make this 8, it is way more fluent, but it doesn't start at the point it should start (1.0 is the highest number that forces the starting point.)
         d.debt = debt
         d.defined = true
       }
