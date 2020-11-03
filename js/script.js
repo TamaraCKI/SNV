@@ -25,6 +25,7 @@ var maxx = 2015
 var miny = 0
 var maxy = 100
 var endpointData = 1971
+//var noAnswer = false //When true, no answer shows
 
 var ƒ = d3.f
 // About the html:
@@ -74,7 +75,7 @@ yourData = data
 
 // This could be maybe which we should change if we add the button.
 // orignally, this is false, but if you make it true, then no answers are shown.
-var completed = false
+var completed = noAnswer
 
 // if you make this endpointData + 1, then you are forced to start your drawing where the data ended. If you make it endpointData -2
 // the user can decide it themselves (as it was orignally)
