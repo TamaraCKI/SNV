@@ -3,12 +3,13 @@
 // But we should also call our y-var "debt", or change the program.
 // Data
 var data = [
-  {"year": 1910,    "debt": 74},
-  {"year": 1911,    "debt": 74},
-  {"year": 1929,    "debt": 66},
-  {"year": 1950,    "debt": 63},
-  {"year": 1960,    "debt": 54},
+  //{"year": 1910,    "debt": 74},
+  //{"year": 1911,    "debt": 74},
+  //{"year": 1929,    "debt": 66},
+  //{"year": 1950,    "debt": 63},
+  //{"year": 1960,    "debt": 54},
   {"year": 1970,    "debt": 48},
+  {"year": 1971,    "debt": 48},
   {"year": 1980,    "debt": 43},
   {"year": 1990,    "debt": 35},
   {"year": 1999,    "debt": 29},
@@ -19,11 +20,11 @@ var data = [
 
 
 // added variables:
- var minx = 1910
+ var minx = 1970
 var maxx = 2015
 var miny = 0
 var maxy = 100
-var endpointData = 1950
+var endpointData = 1971
 
 var ƒ = d3.f
 // About the html:
@@ -43,7 +44,7 @@ c.y.domain([miny, maxy])
 //distance for the y-axis steps
 c.xAxis.ticks(10).tickFormat(ƒ())
 //distance for the y-axis steps and the label for the y-axis
-c.yAxis.ticks(5).tickFormat(d => d + '€')
+c.yAxis.ticks(5).tickFormat(d => d + '%')
 
 // ??
 var area = d3.area().x(ƒ('year', c.x)).y0(ƒ('debt', c.y)).y1(c.height)
@@ -84,7 +85,7 @@ var drag = d3.drag()
     var debt = clamp(0, c.y.domain()[1], c.y.invert(pos[1]))
 
     yourData.forEach(function(d){
-      if (Math.abs(d.year - year) < .5){
+      if (Math.abs(d.year - year) < 0.5){//if you make this 8, it is way more fluent, but it doesn't start at the point it should start.
         d.debt = debt
         d.defined = true
       }
