@@ -29,7 +29,7 @@ h1 {
 }
 
 .your-line{
-  stroke: #9FF781;
+  stroke: #f0f; //#9FF781;
   stroke-width: 3;
-  stroke-dasharray: 5 1;
+  stroke-dasharray: 5 5;// 5 1
 }
