@@ -3,26 +3,27 @@
 // But we should also call our y-var "debt", or change the program.
 // Data
 var data = [
-  {"year": 1981,    "debt": 53},
-  {"year": 1984,    "debt": 58},
-  {"year": 1987,    "debt": 42},
-  {"year": 1990,    "debt": 43},
-  {"year": 1993,    "debt": 41},
-  {"year": 1996,    "debt": 36},
-  {"year": 1999,    "debt": 34},
-  {"year": 2002,    "debt": 30},
-  {"year": 2005,    "debt": 25},
-  {"year": 2008,    "debt": 21},
-  {"year": 2011,    "debt": 17},
+  {"year": 1910,    "debt": 74},
+  {"year": 1911,    "debt": 74},
+  {"year": 1929,    "debt": 66},
+  {"year": 1950,    "debt": 63},
+  {"year": 1960,    "debt": 54},
+  {"year": 1970,    "debt": 48},
+  {"year": 1980,    "debt": 43},
+  {"year": 1990,    "debt": 35},
+  {"year": 1999,    "debt": 29},
+  {"year": 2005,    "debt": 21},
+  {"year": 2010,    "debt": 16},
+  {"year": 2015,    "debt": 10},
 ]
 
 
 // added variables:
- var minx = 1981
-var maxx = 2011
+ var minx = 1910
+var maxx = 2015
 var miny = 0
 var maxy = 100
-var endpointData = 1987
+var endpointData = 1950
 
 var ƒ = d3.f
 // About the html:
@@ -52,7 +53,7 @@ var line = d3.area().x(ƒ('year', c.x)).y(ƒ('debt', c.y))
 var clipRect = c.svg
   .append('clipPath#clip')
   .append('rect')
-  .at({width: c.x(endpointData) - 2, height: c.height})
+  .at({width: c.x(endpointData), height: c.height}) // jc.x(endpointData) - 2
 
 var correctSel = c.svg.append('g').attr('clip-path', 'url(#clip)')
 
@@ -93,7 +94,7 @@ var drag = d3.drag()
 //maxx here represents to where the answer is drawn.
     if (!completed && d3.mean(yourData, ƒ('defined')) == 1){
       completed = true // tried this to prevent answer from showing the answer by making it false, it failed.
-      clipRect.transition().duration(1500).attr('width', c.x(maxx)) // duration is the speed of drawing the answer.
+      clipRect.transition().duration(1000).attr('width', c.x(maxx)) // duration is the speed of drawing the answer.
     }
   })
 
