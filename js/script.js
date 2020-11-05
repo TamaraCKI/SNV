@@ -75,7 +75,7 @@ yourData = data
 
 // This could be maybe which we should change if we add the button.
 // orignally, this is false, but if you make it true, then no answers are shown.
-var completed = noAnswer
+var completed = false
 
 // if you make this endpointData + 1, then you are forced to start your drawing where the data ended. If you make it endpointData -2
 // the user can decide it themselves (as it was orignally)
@@ -96,7 +96,7 @@ var drag = d3.drag()
 //maxx here represents to where the answer is drawn.
     if (!completed && d3.mean(yourData, ƒ('defined')) == 1){
       completed = true // tried this to prevent answer from showing the answer by making it false, it failed.
-      clipRect.transition().duration(1000).attr('width', c.x(maxx)) // duration is the speed of drawing the answer.
+       // duration is the speed of drawing the answer.
     }
   })
 
@@ -105,3 +105,18 @@ c.svg.call(drag)
 
 
 function clamp(a, b, c){ return Math.max(a, Math.min(b, c)) }
+
+//<script>
+	var noAnswer = false;//When true, no answer shows.
+
+	function displayInfo(){
+		 //This line is currently not working.
+		document.getElementById("demo").innerHTML="Hello group 4 XD";
+
+    if(completed)
+    {
+      clipRect.transition().duration(1000).attr('width', c.x(maxx))
+    }
+
+	}
+//</script>
