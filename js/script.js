@@ -111,11 +111,12 @@ function clamp(a, b, c){ return Math.max(a, Math.min(b, c)) }
 
 	function displayInfo(){
 		 //This line is currently not working.
-		document.getElementById("demo").innerHTML="Hello group 4 XD";
 
     if(completed)
     {
       clipRect.transition().duration(1000).attr('width', c.x(maxx))
+      document.getElementById("demo").innerHTML="Hello group 4 XD";
+
     }
 
 	}
