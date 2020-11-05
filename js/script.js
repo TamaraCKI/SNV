@@ -25,6 +25,7 @@ var maxx = 2015
 var miny = 0
 var maxy = 100
 var endpointData = 1971
+//var noAnswer = false //When true, no answer shows
 
 var ƒ = d3.f
 // About the html:
@@ -95,7 +96,7 @@ var drag = d3.drag()
 //maxx here represents to where the answer is drawn.
     if (!completed && d3.mean(yourData, ƒ('defined')) == 1){
       completed = true // tried this to prevent answer from showing the answer by making it false, it failed.
-      clipRect.transition().duration(1000).attr('width', c.x(maxx)) // duration is the speed of drawing the answer.
+       // duration is the speed of drawing the answer.
     }
   })
 
@@ -104,3 +105,19 @@ c.svg.call(drag)
 
 
 function clamp(a, b, c){ return Math.max(a, Math.min(b, c)) }
+
+//<script>
+	var noAnswer = false;//When true, no answer shows.
+
+	function displayInfo(){
+		 //This line is currently not working.
+
+    if(completed)
+    {
+      clipRect.transition().duration(1000).attr('width', c.x(maxx))
+      document.getElementById("demo").innerHTML="Hello group 4 XD";
+
+    }
+
+	}
+//</script>
