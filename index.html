@@ -10,16 +10,29 @@
 		width: 900px;
 		margin: 0 auto;
 		text-align:justify;
+		font-size:15px;
 		}
 
 	.button {
-		width: 170px;
+		width: 190px;
 		text-align:center ;
-		
+		font-size:15px;
+		}
+
+	.graph {
+		width: 900px;
+		font-size:15px;
+		background-color:rgb(245, 245, 236);
+		}
+
 	}
 </style>
 
-<title>How is the world?</title>
+<head>
+	<link rel="icon" href="logo.png" type="image/x-icon"/>
+	<title>How is the world?</title>
+</head>
+
 <body body style="overflow-y:visible">
 	<h1>How well do you know the world?</h1>
 
@@ -32,13 +45,18 @@
 			<br /><br />
 	</div>
 
-	<h3 style="text-align:center; font-family:Sans-serif;">Living in extreme poverty (with less than €1.05/day)</h3>
-	<p style="font-family:Sans-serif;">Percentage of global population</p>
-	<div id="infographie"></div>
-	<p style="text-align:right; font-family:Sans-serif;">Year</p>
+	<center><div class="graph">
+		<h3 style="text-align:center; font-family:Sans-serif;">Living in extreme poverty (with less than €1.05/day)</h3>
+		<p style="text-align:left; font-family:Sans-serif;">Percentage of global population</p>
+		<div style="width: 900px;" id="infographie"></div>
+		<p style="text-align:right; font-family:Sans-serif;">Year</p>
+	</div></center>
+		
 
-	<center><button class="button" type="button" name = "button" onclick="displayInfo()">Click here to find out how well you know the world</button></center>
-	<p class="instruction" id="demo"></p>
+	<center><button class="button" type="button" onclick="displayInfo()">Click here to find out how well you know the world</button></center>
+	<p class="instruction" id="exp1"></p>
+	<p class="instruction" id="exp2"></p>
+	<p class="instruction" id="exp3"></p>
 	<br /><br /><br />
 </body>
 <script src='js/d3v4.js'></script>
