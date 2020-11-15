@@ -28,9 +28,9 @@ h1 {
   stroke-width: 3;
 }
 
-//.area{
- // fill: #eee;
-//}
+.area{
+  fill: #eee;
+}
 
 .your-line{
   stroke: #f0f; //#9FF781;
