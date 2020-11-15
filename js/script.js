@@ -10,13 +10,26 @@ var data = [
   //{"year": 1960,    "debt": 54},
   //{"year": 1970,    "debt": 48},
   //{"year": 1971,    "debt": 48},
+  // With slashes I calculated myself, now did every two years.
   {"year": 1980,    "debt": 43},
-  {"year": 1981,    "debt": 43},
+  {"year": 1981,    "debt": 43},//
+  {"year": 1982,    "debt": 41},//
+  {"year": 1983,    "debt": 40},//
+
   {"year": 1984,    "debt": 39},
+    {"year": 1986,    "debt": 37.6},//
+      {"year": 1988,    "debt": 36.3},//
   {"year": 1990,    "debt": 35},
+    {"year": 1992,    "debt": 33.6},//
+      {"year": 1994,    "debt": 32.3},//
+        {"year": 1996,    "debt": 31},//
   {"year": 1999,    "debt": 29},
+  {"year": 2001,    "debt": 26.3}, //
+  {"year": 2003,    "debt": 22.4}, //
   {"year": 2005,    "debt": 21},
+    {"year": 2007,    "debt": 18.5},//
   {"year": 2010,    "debt": 16},
+    {"year": 2012,    "debt": 13.6},//
   {"year": 2015,    "debt": 10},
 ]
 
@@ -26,7 +39,7 @@ var data = [
 var maxx = 2015
 var miny = 0
 var maxy = 100
-var endpointData = 1981
+var endpointData = 1981 //1981
 //var noAnswer = false //When true, no answer shows
 
 var ƒ = d3.f
@@ -45,7 +58,7 @@ c.x.domain([minx, maxx])
 c.y.domain([miny, maxy])
 
 //distance for the y-axis steps
-c.xAxis.ticks(10).tickFormat(ƒ())
+c.xAxis.ticks(10).tickFormat(ƒ()) //10
 //distance for the y-axis steps and the label for the y-axis
 c.yAxis.ticks(5).tickFormat(d => d + '%')
 
@@ -88,7 +101,7 @@ var drag = d3.drag()
     var debt = clamp(0, c.y.domain()[1], c.y.invert(pos[1]))
 
     yourData.forEach(function(d){
-      if (Math.abs(d.year - year) < 1.0){//if you make this 8, it is way more fluent, but it doesn't start at the point it should start (1.0 is the highest number that forces the starting point.)
+      if (Math.abs(d.year - year) < 0.6){//if you make this 8, it is way more fluent, but it doesn't start at the point it should start (1.0 is the highest number that forces the starting point.)
         d.debt = debt
         d.defined = true
       }
