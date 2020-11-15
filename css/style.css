@@ -12,11 +12,11 @@ body{
   overflow: hidden;
 }
 
-h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.5em;
-  text-align: center;
-}
+//h1 {
+ // font-family: 'Open Sans', sans-serif;
+  //font-size: 1.5em;
+ // text-align: center;
+//}
 
 .axis{
   opacity: .5;
