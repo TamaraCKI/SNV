@@ -35,7 +35,7 @@ var data = [
 
 
 // added variables:
- var minx = 1980
+var minx = 1980
 var maxx = 2015
 var miny = 0
 var maxy = 100
@@ -130,8 +130,11 @@ function clamp(a, b, c){ return Math.max(a, Math.min(b, c)) }
     if(completed)
     {
       clipRect.transition().duration(1000).attr('width', c.x(maxx))
-      document.getElementById("demo").innerHTML="<br><br>Extreme poverty has plummeted.<br><br>Despite unprecedented population growth over the last two decades, the global percentage of extreme poverty has gone down. Starting at 43% in 1980, it decreased to only 9.98% in 2015 and has been predicted to decline even further in the future! This is not only the case for extreme poverty. No matter where you put the poverty threshold, poverty has decreased in the last few decades.<br><br>But what caused this decrease?<br><br>The answer is economic growth. Due to technological innovations made in the last two centuries, worldwide productivity keeps increasing. This led to a sustained economic growth that remains increasing prosperity to this day by reducing poverty.<br><br><br>How did you do?<br><br>If your drawn line was nowhere close to the actual data, you were not alone! A global survey from 2017 showed that only 20% of the people asked believed that poverty had decreased in the last two decades.";
-
+      document.getElementById("exp1").innerHTML="<br><br>Extreme poverty has plummeted.<br><br>Despite unprecedented population growth over the last two decades, the global percentage of extreme poverty has gone down. Starting at 43% in 1980, it decreased to only 9.98% in 2015 and has been predicted to decline even further in the future! This is not only the case for extreme poverty. No matter where you put the poverty threshold, poverty has decreased in the last few decades.";
+      document.getElementById("exp2").innerHTML="<br><br>But what caused this decrease?<br><br>The answer is economic growth. Due to technological innovations made in the last two centuries, worldwide productivity keeps increasing. This led to a sustained economic growth that remains increasing prosperity to this day by reducing poverty.";
+      document.getElementById("exp3").innerHTML="<br><br>How did you do?<br><br>If your drawn line was nowhere close to the actual data, you were not alone! A global survey from 2017 showed that only 20% of the people asked believed that poverty had decreased in the last two decades.";
+      window.location.hash = "#exp3";
+      //document.getElementsByTagName('BODY')[0].scrollTop=document.getElementsByTagName('BODY')[0].scrollHeight;
     }
 
 	}
