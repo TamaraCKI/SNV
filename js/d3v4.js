@@ -943,7 +943,7 @@
     return a[0] - b[0] || a[1] - b[1];
   }
 
-  // Computes the upper convex hull per the monotone chain algorithm.
+  // Computes the upper convex hull per the monotone chain algorithm. // TAMARA
   // Assumes points.length >= 3, is sorted by x, unique in y.
   // Returns an array of indices into points in left-to-right order.
   function computeUpperHullIndexes(points) {
@@ -4475,7 +4475,7 @@ var   tau$1 = 2 * pi$1;
   var cubehelix$2 = cubehelix$1(hue);
   var interpolateCubehelixLong = cubehelix$1(nogamma);
 
-  function quantize(interpolator, n) {
+  function quantize(interpolator, n) { // Tamara
     var samples = new Array(n);
     for (var i = 0; i < n; ++i) samples[i] = interpolator(i / (n - 1));
     return samples;
@@ -6821,12 +6821,12 @@ var   t1$1 = new Date;
     return scale;
   }
 
-  function quantize$1() {
+  function quantize$1() { // Tamara
     var x0 = 0,
         x1 = 1,
-        n = 1,
-        domain = [0.5],
-        range = [0, 1];
+        n = 1,//1
+        domain = [0.5], //0.5
+        range = [0, 1]; //0,1
 
     function scale(x) {
       if (x <= x) return range[bisectRight(domain, x, 0, n)];
@@ -9699,7 +9699,7 @@ var   keyPrefix$1 = "$";
     var id = defaultId,
         parentId = defaultParentId;
 
-    function stratify(data) {
+    function stratify(data) { //Tamara
       var d,
           i,
           n = data.length,
@@ -10320,7 +10320,7 @@ var   keyPrefix$1 = "$";
       }
 
       function apply(quad, x0, y0, x1, y1) {
-        var data = quad.data, rj = quad.r, r = ri + rj;
+        var data = quad.data, rj = quad.r, r = ri + rj; //Tamara quad
         if (data) {
           if (data.index > i) {
             var x = xi - data.x - data.vx,
@@ -14115,9 +14115,9 @@ var   object$1 = {type: "LineString", coordinates: coordinates};
   function graticule() {
     var x1, x0, X1, X0,
         y1, y0, Y1, Y0,
-        dx = 10, dy = dx, DX = 90, DY = 360,
+        dx = 25, dy = dx, DX = 90, DY = 360,
         x, y, X, Y,
-        precision = 2.5;
+        precision = 2.5; //TAMara aangepast from 2.5
 
     function graticule() {
       return {type: "MultiLineString", coordinates: lines()};
@@ -15796,7 +15796,7 @@ var   y0$3;
   function at(name, value) {
     if (typeof(name) == 'object'){
       for (var key in name){
-        this.attr(key.replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase(), name[key]) 
+        this.attr(key.replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase(), name[key])
       }
       return this
     } else{
@@ -15806,7 +15806,7 @@ var   y0$3;
 
   function f(){
     var functions = arguments
-    
+
     //convert all string arguments into field accessors
     var i = 0, l = functions.length
     while (i < l) {
@@ -15856,7 +15856,7 @@ var   y0$3;
       }
 
       return sel
-    } 
+    }
 
     function addPx(d){ return d.match ? d : d + 'px' }
   };
@@ -15904,7 +15904,7 @@ var   y0$3;
 
     c.margin = c.margin || {top: 20, right: 20, bottom: 20, left: 20}
     ;['top', 'right', 'bottom', 'left'].forEach(function(d){
-      if (!c.margin[d] && c.margin[d] != 0) c.margin[d] = 20 
+      if (!c.margin[d] && c.margin[d] != 0) c.margin[d] = 20
     })
 
     c.width  = c.width  || c.totalWidth  - c.margin.left - c.margin.right || 900
@@ -15939,7 +15939,7 @@ var   y0$3;
           .attr('class', 'y axis')
           .call(c.yAxis);
     }
-    
+
     return c
   }
 
@@ -15948,7 +15948,7 @@ var   y0$3;
 
     tooltipSel = tooltipSel || select('.tooltip')
 
-    sel 
+    sel
         .on('mouseover.attachTooltip', ttDisplay)
         .on('mousemove.attachTooltip', ttMove)
         .on('mouseout.attachTooltip',  ttHide)
@@ -15994,14 +15994,14 @@ var   y0$3;
     }
   }
 
-  function loadData(files, cb){
+  function loadData(files, cb){//Tamara cb
     var q = queue()
     files.forEach(function(d){
       var type = d.split('.').reverse()[0]
 
       var loadFn = {csv: csv$1, tsv: tsv$1, json: json}[type]
       if (!loadFn) return cb(new Error('Invalid type', d))
-      q.defer(loadFn, d) 
+      q.defer(loadFn, d)
     })
     q.awaitAll(cb)
   }
