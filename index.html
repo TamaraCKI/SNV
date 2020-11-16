@@ -12,18 +12,20 @@
 		margin: 0 auto;
 		text-align:justify;
 		font-size:15px;
+		font-family: sans-serif;
 		}
 
 	.button {
 		width: 190px;
 		text-align:center ;
 		font-size:15px;
+		background-color: white;
 		}
 
 	.graph {
 		width: 900px;
 		font-size:15px;
-		background-color:rgb(245, 245, 236);
+		background-color: white;
 		}
 	}
 </style>
@@ -34,35 +36,29 @@
 	<title>Know your world</title>
 </head>
 
-
-
-<body body style="overflow-y:visible">
-	<h1>How well do you know the world?</h1>
+<body body style="overflow-y:visible; background-color:rgb(241, 241, 241);">
+	<center><img style="width: 600px;" src="title.png"></img></center>
 
 	<div class="instruction">
-			<br />
-			<p>Test how well you know the world here! [todo]</p>
+			<p>Want to know if your view of our planet matches reality? Test how well you know the world here!</p>
 			<p>43% of the global population lived in extreme poverty in 1980. Draw a line in the graph below to show how you think the percentage of global poverty has changed over the years.</p>
 			<p style="font-weight: 700;">Draw the line by holding down the left mouse button and dragging it from the start of the graph to the right end.</p>
 			<br /><br />
 	</div>
 
 	<center><div class="graph">
-		<h3 style="text-align:center; font-family:Sans-serif;">People living in extreme poverty (with less than €1.62 per day)</h3>
+
+		<h3 style="text-align:center; font-family:Sans-serif;">People living in extreme poverty (with less than $1.90 per day)</h3>
 		<p style="text-align:left; font-family:Sans-serif;">Percentage of global population</p>
 		<div style="width: 900px;" id="infographie"></div>
 		<p style="text-align:right; font-family:Sans-serif;">Year</p>
 	</div></center>
 
-
-
-
-
-
 	<center><button class="button" type="button" onclick="displayInfo()">Click here to find out how well you know the world</button></center>
 	<p class="instruction" id="exp1"></p>
 	<p class="instruction" id="exp2"></p>
 	<p class="instruction" id="exp3"></p>
+	<p class="instruction" id="exp4"></p>
 	<br /><br /><br />
 </body>
 <script src='js/d3v4.js'></script>

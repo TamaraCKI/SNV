@@ -149,11 +149,12 @@ function clamp(a, b, c){ return Math.max(a, Math.min(b, c)) }
 
     if(completed)
     {
-      clipRect.transition().duration(1500).attr('width', c.x(maxx))
-      document.getElementById("exp1").innerHTML='<br><br> <span style="font-weight: 700;"> Extreme poverty has plummeted. </span> <br> <br> Despite unprecedented population growth over the last two decades, the global percentage of extreme poverty has gone down. Starting at 43% in 1980, it decreased to only 9.98% in 2015 and has been predicted to decline even further in the future! This is not only the case for extreme poverty. No matter where you put the poverty threshold, poverty has decreased in the last few decades.';
-      document.getElementById("exp2").innerHTML='<br><br> <span style="font-weight: 700;"> But what caused this decrease? </span> <br><br>The answer is economic growth. Due to technological innovations made in the last two centuries, worldwide productivity keeps increasing. This led to a sustained economic growth that remains increasing prosperity to this day by reducing poverty.[TODO]';
-      document.getElementById("exp3").innerHTML='<br><br> <span style="font-weight: 700;"> How did you do?  </span> <br><br>If your drawn line was nowhere close to the actual data, you were not alone! A global survey from 2017 showed that only 20% of the people asked believed that poverty had decreased in the last two decades.';
-      window.location.hash = "#exp3";
+      clipRect.transition().duration(1000).attr('width', c.x(maxx))
+      document.getElementById("exp1").innerHTML='<br> <span style="font-weight: 700;"> Extreme poverty has plummeted. </span> <br>Despite unprecedented population growth over the last two decades, the global percentage of extreme poverty has gone down. Starting at 43% in 1980, it decreased to only 9.98% in 2015 and has been predicted to decline even further in the future! This is not only the case for extreme poverty. No matter where you put the poverty threshold, poverty has decreased in the last few decades.';
+      document.getElementById("exp2").innerHTML='<br><span style="font-weight: 700;"> But what caused this decrease? </span> <br>The answer is economic growth. Due to technological innovations made in the last two centuries, worldwide productivity keeps increasing. This led to a sustained economic growth that remains increasing prosperity to this day by reducing poverty. For the past few decades this decline in poverty was mainly concentrated in China, Indonesia, India, Pakistan and Vietnam.';
+      document.getElementById("exp3").innerHTML='<br> <span style="font-weight: 700;"> How did you do?  </span> <br>If your drawn line was nowhere close to the actual data, you were not alone! A global survey from 2017 showed that only 20% of the people asked believed that poverty had decreased in the last two decades.';
+      document.getElementById("exp4").innerHTML='<br> <span style="font-weight: 700;"> What now?  </span> <br>Less than 10% extreme poverty seems low, but any extreme poverty is undesirable.The United Nations has the sustainable development goal to eradicate extreme poverty worldwide before 2030. Do you think we can reach this goal?';
+      window.location.hash = "#exp4";
       //YUAN: watch out, you need to use ' ' and not " " otherwise <span> won't work :)
       //document.getElementsByTagName('BODY')[0].scrollTop=document.getElementsByTagName('BODY')[0].scrollHeight;
     }
