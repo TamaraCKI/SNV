@@ -9,7 +9,7 @@ This repository is a fork from <a href="https://bl.ocks.org/1wheel/07d9040c3422d
 
 ## Draw the line
 
-43% of the global population lived in extreme poverty in 1980. Visit tamaracki.github.io/snv/, draw the line and test your knowledge!
+43% of the global population lived in extreme poverty in 1980. Visit [tamaracki.github.io/snv/], draw the line and test your knowledge!
 
 
 
