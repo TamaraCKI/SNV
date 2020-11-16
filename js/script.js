@@ -2,6 +2,7 @@
 // They just use "debt" at a lot of points in the program. It doesn't seem to have a specific reason for it to be debt
 // But we should also call our y-var "debt", or change the program.
 // Data
+
 var data = [
   //{"year": 1910,    "debt": 74},
   //{"year": 1911,    "debt": 74},
@@ -54,6 +55,8 @@ var c = d3.conventions({
 
 c.svg.append('rect').at({width: c.width, height: c.height, opacity: 0})
 
+
+
 c.x.domain([minx, maxx])
 c.y.domain([miny, maxy])
 
@@ -61,6 +64,13 @@ c.y.domain([miny, maxy])
 c.xAxis.ticks(10).tickFormat(ƒ()) //10
 //distance for the y-axis steps and the label for the y-axis
 c.yAxis.ticks(5).tickFormat(d => d + '%')
+//c.yAxis.tickSize(-800, -1000, 0)
+
+
+
+
+
+
 
 // ??
 var area = d3.area().x(ƒ('year', c.x)).y0(ƒ('debt', c.y)).y1(c.height)
@@ -74,11 +84,19 @@ var clipRect = c.svg
 
 var correctSel = c.svg.append('g').attr('clip-path', 'url(#clip)')
 
+
+
 correctSel.append('path.area').at({d: area(data)})
+
 correctSel.append('path.line').at({d: line(data)})
+
 yourDataSel = c.svg.append('path.your-line')
 
+
+
 c.drawAxis()
+
+
 
 // where you can start drawing
 yourData = data
@@ -87,6 +105,7 @@ yourData = data
     if (d.year == endpointData) d.defined = true
     return d.year >= endpointData
   })
+
 
 // This could be maybe which we should change if we add the button.
 // orignally, this is false, but if you make it true, then no answers are shown.
@@ -116,6 +135,7 @@ var drag = d3.drag()
   })
 
 c.svg.call(drag)
+
 
 
 
