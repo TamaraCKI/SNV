@@ -6,6 +6,11 @@ svg{
 	overflow: visible;
 }
 
+svg text {
+				 fill: black;
+				 font: 15px sans-serif;
+		 }
+
 body{
   font-family: monospace;
   margin: 0px;
@@ -28,6 +33,7 @@ h1 {
   stroke-width: 3;
 }
 
+
 .area{
   fill: #eee;
 }
@@ -35,5 +41,5 @@ h1 {
 .your-line{
   stroke: #f0f; //#9FF781;
   stroke-width: 3;
-  stroke-dasharray: 5 5;// 5 1
+  stroke-dasharray: 3 3;// 5 1 // 5 5
 }
